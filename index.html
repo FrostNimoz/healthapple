@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apple Health // Medical Analysis</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="console">
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <header class="hud"><div class="build">XX. KK. 15<br><small>0215. 6586.</small></div><div class="performance">FPS N/A&nbsp; | &nbsp;GPU 5% 50°C&nbsp; | &nbsp;CPU 11%&nbsp; | &nbsp;LAT N/A</div></header>
+  <section class="left-column">
+    <div class="title-block"><span></span><h1>HEALTH<br>GRAPHICS</h1></div>
+    <div class="window-label"><b>⊙</b> ANALYSIS / DNA <em>ANALYSING ...[ XXX ]</em><button>×</button></div>
+    <div class="scanner panel"><div class="scanner-grid"></div><div class="hex a"></div><div class="hex b"></div><div class="hex c"></div><div class="radar"><i></i><i></i><i></i><b></b></div><div class="scanner-notes">ACTIVE METRICS<br><span>HEART / REST / SLEEP</span></div></div>
+    <div class="mini-card"><b>HEART. DG/01258</b><div class="tiny-bars"></div><div class="organ">♥</div><span class="tag">H3</span></div>
+    <div class="mini-card bottom"><b>HEART. DG/01258</b><div class="ecg">⌁⌁⌁⌁⌁⌁</div><div class="organ red">♥</div></div>
+  </section>
+  <section class="top-interface">
+    <div class="tab"><b>⊙</b> SCANNER / DNA <span>MAXFTER ....[ 054]</span><button>×</button></div><div class="tab wide">JZX / 012515 / BLOOD CIRCULATORY SYSTEM</div><div class="tab panels">▼ &nbsp; ACTIVE PANELS　☰　×</div>
+    <div class="control-bar"><div class="control-title">⊙　ACTIVE / XRAY　<span>JZX / 05</span>　×</div><div class="telemetry"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sliders"></div></div>
+  </section>
+  <section class="main-panel panel">
+    <div class="window-label"><b>⊙</b> BLOOD CIRCULATORY　<span>JZX / 156487</span><button>×</button></div><div class="medical-title">M E D I C A L　A N A L Y S I S　B O D Y　/　A P P L E　H E A L T H</div>
+    <div class="readout topread">BPM = <b id="bpm">68</b>　 HEART = <b>6</b></div><div class="readout side">STATS<br>　▸ 7200<br>　▸ 6100<br>　▸ 5000<br>　▸ 3800<br>　▸ 2700</div>
+    <svg class="vessels" viewBox="0 0 1000 530" preserveAspectRatio="none" aria-label="Abstract blood circulation visualization"><defs><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="vein" x1="0" x2="1"><stop stop-color="#28f1ba"/><stop offset=".5" stop-color="#45fff0"/><stop offset="1" stop-color="#68f56e"/></linearGradient></defs><g fill="none" stroke="url(#vein)" filter="url(#glow)" stroke-linecap="round"><path stroke-width="32" d="M-30 275 C110 205 160 55 300 78 C450 98 435 190 565 120 C690 52 745 156 1035 45"/><path stroke-width="27" d="M170 535 C125 410 190 275 296 100"/><path stroke-width="24" d="M330 535 C430 435 340 255 365 132"/><path stroke-width="35" d="M580 530 C720 468 690 350 610 242 C570 188 560 152 525 128"/><path stroke-width="31" d="M560 530 C730 458 812 410 810 301 C807 204 850 151 1002 105"/><path stroke-width="18" d="M730 116 C835 176 908 219 1010 188"/><path opacity=".75" stroke-width="7" d="M0 255 C160 145 172 37 303 59 M595 511 C720 430 731 330 629 207 M591 515 C792 465 838 395 837 278"/></g></svg>
+    <div class="crosshair">⌖</div><button class="arrow left">‹</button><button class="arrow right">›</button><div class="scale">00　　10　　 20　　　30　　　40　　　50　　　60　　　70　　　80　　　90　　00</div><div class="timer">‹　00:00:00.058　›</div>
+  </section>
+  <section class="data-table panel"><div class="window-label"><b>⊙</b> DATA TIMELINE　 <em>FILTERING ...[ X02]</em><button>×</button></div><div class="table-head"><span>DATE</span><span>NO.</span><span>DATA TIMELINE</span><span>DATA/XG</span><span>RESULT</span></div><div class="table-row"><span>＋ 0452</span><span>JZX0125</span><span>DUFHAETKST/0125</span><span>0215/RD</span><span class="error">ERROR</span></div><div class="table-row"><span>＋ 0598</span><span>DATA0489</span><span>LUFTETKDD/2654</span><span>0215/RD</span><span class="ok">DONE　　＋</span></div></section>
+  <button id="config" class="config">⊙</button><dialog id="dialog"><form method="dialog"><button class="close">×</button><p>APPLE HEALTH / CONFIG</p><h2>Live metrics input</h2><label>Heart rate <input id="heart" type="number" value="68"> BPM</label><label>Motion goal <input type="number" value="800"> CAL</label><button class="save" value="default">SAVE PANEL SETTINGS</button></form></dialog>
+</main><script src="app.js"></script></body></html>
