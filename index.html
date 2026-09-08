@@ -1,25 +1,67 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apple Health // Medical Analysis</title><link rel="stylesheet" href="styles.css"></head>
-<body><main class="console">
-  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-  <header class="hud"><div class="build">XX. KK. 15<br><small>0215. 6586.</small></div><div class="performance">FPS N/A&nbsp; | &nbsp;GPU 5% 50°C&nbsp; | &nbsp;CPU 11%&nbsp; | &nbsp;LAT N/A</div></header>
-  <section class="left-column">
-    <div class="title-block"><span></span><h1>HEALTH<br>GRAPHICS</h1></div>
-    <div class="window-label"><b>⊙</b> ANALYSIS / DNA <em>ANALYSING ...[ XXX ]</em><button>×</button></div>
-    <div class="scanner panel"><div class="scanner-grid"></div><div class="hex a"></div><div class="hex b"></div><div class="hex c"></div><div class="radar"><i></i><i></i><i></i><b></b></div><div class="scanner-notes">ACTIVE METRICS<br><span>HEART / REST / SLEEP</span></div></div>
-    <div class="mini-card"><b>HEART. DG/01258</b><div class="tiny-bars"></div><div class="organ">♥</div><span class="tag">H3</span></div>
-    <div class="mini-card bottom"><b>HEART. DG/01258</b><div class="ecg">⌁⌁⌁⌁⌁⌁</div><div class="organ red">♥</div></div>
-  </section>
-  <section class="top-interface">
-    <div class="tab"><b>⊙</b> SCANNER / DNA <span>MAXFTER ....[ 054]</span><button>×</button></div><div class="tab wide">JZX / 012515 / BLOOD CIRCULATORY SYSTEM</div><div class="tab panels">▼ &nbsp; ACTIVE PANELS　☰　×</div>
-    <div class="control-bar"><div class="control-title">⊙　ACTIVE / XRAY　<span>JZX / 05</span>　×</div><div class="telemetry"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sliders"></div></div>
-  </section>
-  <section class="main-panel panel">
-    <div class="window-label"><b>⊙</b> BLOOD CIRCULATORY　<span>JZX / 156487</span><button>×</button></div><div class="medical-title">M E D I C A L　A N A L Y S I S　B O D Y　/　A P P L E　H E A L T H</div>
-    <div class="readout topread">BPM = <b id="bpm">68</b>　 HEART = <b>6</b></div><div class="readout side">STATS<br>　▸ 7200<br>　▸ 6100<br>　▸ 5000<br>　▸ 3800<br>　▸ 2700</div>
-    <svg class="vessels" viewBox="0 0 1000 530" preserveAspectRatio="none" aria-label="Abstract blood circulation visualization"><defs><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="vein" x1="0" x2="1"><stop stop-color="#28f1ba"/><stop offset=".5" stop-color="#45fff0"/><stop offset="1" stop-color="#68f56e"/></linearGradient></defs><g fill="none" stroke="url(#vein)" filter="url(#glow)" stroke-linecap="round"><path stroke-width="32" d="M-30 275 C110 205 160 55 300 78 C450 98 435 190 565 120 C690 52 745 156 1035 45"/><path stroke-width="27" d="M170 535 C125 410 190 275 296 100"/><path stroke-width="24" d="M330 535 C430 435 340 255 365 132"/><path stroke-width="35" d="M580 530 C720 468 690 350 610 242 C570 188 560 152 525 128"/><path stroke-width="31" d="M560 530 C730 458 812 410 810 301 C807 204 850 151 1002 105"/><path stroke-width="18" d="M730 116 C835 176 908 219 1010 188"/><path opacity=".75" stroke-width="7" d="M0 255 C160 145 172 37 303 59 M595 511 C720 430 731 330 629 207 M591 515 C792 465 838 395 837 278"/></g></svg>
-    <div class="crosshair">⌖</div><button class="arrow left">‹</button><button class="arrow right">›</button><div class="scale">00　　10　　 20　　　30　　　40　　　50　　　60　　　70　　　80　　　90　　00</div><div class="timer">‹　00:00:00.058　›</div>
-  </section>
-  <section class="data-table panel"><div class="window-label"><b>⊙</b> DATA TIMELINE　 <em>FILTERING ...[ X02]</em><button>×</button></div><div class="table-head"><span>DATE</span><span>NO.</span><span>DATA TIMELINE</span><span>DATA/XG</span><span>RESULT</span></div><div class="table-row"><span>＋ 0452</span><span>JZX0125</span><span>DUFHAETKST/0125</span><span>0215/RD</span><span class="error">ERROR</span></div><div class="table-row"><span>＋ 0598</span><span>DATA0489</span><span>LUFTETKDD/2654</span><span>0215/RD</span><span class="ok">DONE　　＋</span></div></section>
-  <button id="config" class="config">⊙</button><dialog id="dialog"><form method="dialog"><button class="close">×</button><p>APPLE HEALTH / CONFIG</p><h2>Live metrics input</h2><label>Heart rate <input id="heart" type="number" value="68"> BPM</label><label>Motion goal <input type="number" value="800"> CAL</label><button class="save" value="default">SAVE PANEL SETTINGS</button></form></dialog>
-</main><script src="app.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulseframe — Apple Health dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">+</span><span>PULSEFRAME</span></div>
+        <p class="eyebrow">APPLE HEALTH / LOCAL VIEW</p>
+        <nav aria-label="Primary navigation">
+          <button class="nav-item active" data-view="overview"><span>◈</span> Overview</button>
+          <button class="nav-item" data-view="heart"><span>♡</span> Heart</button>
+          <button class="nav-item" data-view="activity"><span>⌁</span> Activity</button>
+          <button class="nav-item" data-view="sleep"><span>☾</span> Sleep</button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sync-state"><i></i> HEALTH DATA READY</div>
+          <p>Last imported<br /><strong id="syncTime">Today, 08:42</strong></p>
+          <button class="outline-button" id="settingsButton">⚙ Configure data</button>
+        </div>
+      </aside>
+
+      <section class="dashboard">
+        <header class="topbar">
+          <div><p class="eyebrow">PERSONAL HEALTH INTELLIGENCE</p><h1>Good morning, Alex.</h1></div>
+          <div class="top-actions"><button class="date-chip" id="previousDay" aria-label="Previous day">‹</button><button class="date-chip" id="dateButton">TODAY · SEP 08</button><button class="date-chip" id="nextDay" aria-label="Next day">›</button><button class="avatar" aria-label="Account">AM</button></div>
+        </header>
+
+        <section class="signal-banner">
+          <div class="signal-icon">✦</div>
+          <div><p class="eyebrow">DAILY SIGNAL</p><strong id="signalTitle">Your recovery is trending up.</strong><span id="signalCopy"> Sleep consistency and resting heart rate are both in your optimal range.</span></div>
+          <span class="signal-score"><b id="recoveryScore">84</b> / 100</span>
+        </section>
+
+        <section class="metric-grid" aria-label="Key health metrics">
+          <article class="metric-card heart-card"><div class="card-top"><span class="metric-symbol">♡</span><span class="status live">LIVE</span></div><p>HEART RATE</p><div class="metric-value"><strong id="heartValue">68</strong><span>BPM</span></div><div class="sparkline heart-line" aria-label="Heart rate chart"></div><div class="metric-footer"><span>Resting <b id="restingValue">56</b></span><span>Range 52–113</span></div></article>
+          <article class="metric-card activity-card"><div class="card-top"><span class="metric-symbol">⌁</span><span class="status">TODAY</span></div><p>ACTIVITY</p><div class="metric-value"><strong id="moveValue">612</strong><span>CAL</span></div><div class="rings" aria-label="Activity rings"><i></i><i></i><i></i><b id="movePercent">76%</b></div><div class="metric-footer"><span>Move goal</span><span id="moveGoalText">800 CAL</span></div></article>
+          <article class="metric-card sleep-card"><div class="card-top"><span class="metric-symbol">☾</span><span class="status">LAST NIGHT</span></div><p>SLEEP</p><div class="metric-value"><strong id="sleepValue">7<span class="small">h</span> 42</strong><span>MIN</span></div><div class="sleep-bars" aria-label="Sleep stages chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-footer"><span>Consistency</span><span><b id="consistencyValue">91</b>%</span></div></article>
+        </section>
+
+        <section class="main-grid">
+          <article class="panel trends-panel">
+            <div class="panel-header"><div><p class="eyebrow">SEVEN DAY PATTERN</p><h2>Vitals &amp; movement</h2></div><div class="segmented" role="group" aria-label="Metric selection"><button class="selected" data-chart="heart">Heart</button><button data-chart="activity">Activity</button></div></div>
+            <div class="chart-meta"><span id="chartLabel">AVERAGE HEART RATE</span><strong id="chartAverage">64 BPM</strong><span class="up">↑ 4.8% vs last week</span></div>
+            <div class="chart-wrap"><div class="chart-y"><span>100</span><span>75</span><span>50</span></div><div class="line-chart" id="lineChart"><svg viewBox="0 0 640 190" preserveAspectRatio="none" aria-label="Seven day metric graph"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8ff4d" stop-opacity=".28"/><stop offset="1" stop-color="#a8ff4d" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 132 L91 106 L182 122 L274 69 L365 91 L457 46 L548 76 L640 36 L640 190 L0 190Z"/><path class="line" d="M0 132 L91 106 L182 122 L274 69 L365 91 L457 46 L548 76 L640 36"/><g class="points"><circle cx="0" cy="132" r="4"/><circle cx="91" cy="106" r="4"/><circle cx="182" cy="122" r="4"/><circle cx="274" cy="69" r="4"/><circle cx="365" cy="91" r="4"/><circle cx="457" cy="46" r="4"/><circle cx="548" cy="76" r="4"/><circle cx="640" cy="36" r="4"/></g></svg><div class="chart-days"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span><span>TODAY</span></div></div></div>
+          </article>
+          <article class="panel readiness-panel"><div class="panel-header"><div><p class="eyebrow">READINESS</p><h2>Recovery status</h2></div><button class="more-button" aria-label="More options">•••</button></div><div class="gauge"><div class="gauge-inner"><strong id="gaugeScore">84</strong><span>OPTIMAL</span></div></div><div class="readiness-list"><div><span>Sleep</span><b id="readinessSleep">92</b></div><div><span>Heart rate</span><b id="readinessHeart">81</b></div><div><span>Activity load</span><b id="readinessActivity">79</b></div></div></article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel timeline"><div class="panel-header"><div><p class="eyebrow">TODAY'S TIMELINE</p><h2>Recent health events</h2></div><button class="text-button" id="addEvent">+ Add event</button></div><div id="timelineEvents"><div class="event"><time>08:42</time><i class="event-dot heart-dot"></i><div><strong>Heart rate sample</strong><span>68 BPM · Resting</span></div></div><div class="event"><time>07:18</time><i class="event-dot activity-dot"></i><div><strong>Outdoor walk</strong><span>32 min · 2.4 km · 183 active cal</span></div></div><div class="event"><time>00:11</time><i class="event-dot sleep-dot"></i><div><strong>Sleep analysis</strong><span>7 hr 42 min · 91% consistency</span></div></div></div></article>
+          <article class="panel goal-panel"><p class="eyebrow">TODAY'S INTENTION</p><h2 id="goalHeading">Close your Move ring</h2><p class="goal-copy" id="goalCopy">188 active calories left. A 24-minute brisk walk will get you there.</p><div class="progress"><i id="goalProgress"></i></div><button class="primary-button" id="completeGoal">Log 10 min walk <span>→</span></button></article>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="settingsDialog"><form method="dialog"><div class="dialog-header"><div><p class="eyebrow">PERSONALIZE</p><h2>Configure dashboard</h2></div><button class="close-button" value="cancel">×</button></div><p class="dialog-copy">Update the goals used to calculate your daily progress.</p><label>Move goal <span><input id="moveGoalInput" type="number" min="100" max="2000" value="800" /> CAL</span></label><label>Daily sleep goal <span><input id="sleepGoalInput" type="number" min="4" max="12" step="0.25" value="8" /> HOURS</span></label><label class="toggle-row">Show live heart rate <input id="liveToggle" type="checkbox" checked /><i></i></label><menu><button value="cancel" class="cancel-button">Cancel</button><button id="saveSettings" value="default" class="primary-button">Save changes</button></menu></form></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
